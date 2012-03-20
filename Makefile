@@ -11,7 +11,7 @@ VERYCLEAN	:= *~
 PROJET		:= inertia
 DIR_PROJET	:= Inertia
 
-SCIGL_ROOT	:= /Users/dutech/Work/SVN_loriakhep/NeuralNetwork/DSOM/scigl
+SCIGL_ROOT	:= ../Scigl/scigl
 INERTIA_ROOT	:= .
 EIGEN_ROOT	:= /Users/dutech/Work/SVN_loriakhep/NeuralNetwork/DSOM/eigen-eigen-65ee2328342f
 ifeq ($(PLATFORM), Darwin) 

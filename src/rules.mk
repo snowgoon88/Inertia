@@ -44,8 +44,8 @@ DEPS_$(d)	:= $(TGTS_$(d):%=%.d)
 TAR_SRC		:= $(TAR_SRC) $(CORE_SRC_$(d)) $(d)$/rules.mk
 
 CLEAN		:= $(CLEAN) $(CORE_OBJS_$(d)) $(CORE_DEPS_$(d)) \
-                   $(TGTS_$(d)) $(DEPS_$(d))
-VERYCLEAN	:= $(VERYCLEAN) $(d)/*~
+                   $(DEPS_$(d))
+VERYCLEAN	:= $(VERYCLEAN) $(TGTS_$(d)) $(d)/*~
 
 TAG_FILES	:= $(TAG_FILES) $(CORE_SRC_$(d))
 
@@ -98,7 +98,10 @@ $(TGTS_$(d)):	LF_TGT := -lGL -lGLU \
 #                         -lboost_program_options -lboost_thread-mt
 $(TGTS_$(d)):	LL_TGT :=  $(CORE_OBJS_$(d)) \
                           lib/libscigl.a \
-                          $(GLFW_HOME)/lib/libglfw.a -pthread -lglfw -lGL -lX11 -lXrandr -lm
+                           $(ANTTW_HOME)/lib/libAntTweakBar.so \
+                          -pthread -lglfw -lGL -lX11 -lm
+#                          $(GLFW_HOME)/lib/libglfw.a -pthread -lglfw -lGL -lX11 -lXrandr -lm
+
 
 endif
 
