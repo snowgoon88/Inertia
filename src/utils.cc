@@ -2,6 +2,17 @@
 
 #include "utils.h"
 
+/****************************************************************** LINE_REPR */
+std::string line_repr( Eigen::VectorXf vector, int precision)
+{
+  std::stringstream ss;
+
+  for( int i=0; i < vector.size(); i++) {
+    ss << SETPREC(precision) << (vector)(i) << " ";
+  }
+  
+  return ss.str();
+}
 /*******************************************************************CONVERSION*/
 float to_deg( float rad )
 {

@@ -4,6 +4,26 @@
 
 #include "math.h"
 
+// Eigen library for "dense" matrices and vectors
+#include <Eigen/Dense>
+#include <vector>
+
+#include <string>
+#include <iostream>
+#include <sstream>
+
+// Précision dans les formats
+#include <iomanip>
+#define SETPREC(P) std::setiosflags(std::ios::fixed) << std::setprecision(P)
+
+typedef Eigen::Vector2f TVec2;
+typedef Eigen::Vector3f TVec3;
+
+/**
+ * Return a str line representation of a vector.
+ */
+std::string line_repr( Eigen::VectorXf vector, int precision=2);
+
 /** Angle conversion */
 float to_deg( float rad );
 float to_rad( float deg );
